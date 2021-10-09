@@ -5,9 +5,11 @@ import unidecode
 from tqdm import tqdm
 
 language = "German"
-levels = ["A1.2", "A2.1", "A2.2", "B1.1", "B1.2", "B1.3", "B2.1","B2.2", "B2.3", "C1.1","C1.2", "C1.3", "C1.4"]
+levels = ["C1.4"]
 
 baseURL = "https://www.lingoda.com/german/learning-material/cefr"
+
+failed_downloads = []
 
 for level in levels:
     file = os.path.join("pages", level + ".html")
@@ -25,7 +27,9 @@ for level in levels:
     names_save= []
 
     for name in names:
-        newname = unidecode.unidecode(str.lower(name).replace(' ', '-'))
+        newname = unidecode.unidecode(str.lower(name))
+        newname = newname.replace("-", " ").replace("   ", " ").replace("  ", " ")
+        newname = newname.replace(' ', '-')
         newname = re.sub("[!¡@#$?¿':,]", '', newname)
         newnames.append(newname)
         names_save.append(re.sub("[/?\:]()", '', name))
@@ -34,8 +38,6 @@ for level in levels:
 
     if not os.path.exists(save_folder):
         os.makedirs(save_folder)
-
-    failed_downloads = []
     
     for i, newname in enumerate(tqdm(newnames)):
 
@@ -48,7 +50,7 @@ for level in levels:
         # Start of a non-pdf file, but html "Not found page"
         # b'<!DOCTYPE html>\n<!--[if IE 9]>\n<html lang...'
 
-        if not str(response.content[0:10]).startswith("b'%PDF-1.5"):
+        if not str(response.content[0:10]).startswith("b'%PDF"):
             #print(f"Failed: {i+1}. {names[i]}")
             failed_downloads.append((level, i+1, newname, url))
 
@@ -57,4 +59,4 @@ for level in levels:
                 f.write(response.content)
 
 print("Failed downloads")
-[print(l,i,n) for l,i,n,u in failed_downloads]
+[print(l,i,n, u) for l,i,n,u in failed_downloads]
