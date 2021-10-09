@@ -10,15 +10,10 @@ parser.add_argument('language', type=str, default="german", help="Language to pr
 parser.add_argument('levels', nargs='+', help='List of levels to process (separated by space)',  
 default=["A1.2", "A2.1", "A2.2", "B1.1", "B2.1","B2.2", "B2.3", "C1.1","C1.2", "C1.3", "C1.4"])
 
-# args = parser.parse_args()
+args = parser.parse_args()
 
-# language = args.language
-# levels = args.levels
-
-#args = parser.parse_args()
-
-language = "german"
-levels = ["A1.2"]
+language = args.language
+levels = args.levels
 
 print(">>> Language:", str.upper(language))
 print(">>> Levels:")
@@ -57,15 +52,15 @@ for level in levels:
         newname = re.sub("[!¡@#$&?¿':,.()]", '', newname)
         newname = re.sub('"', '', newname)
         newnames.append(newname)
-        names_save.append(re.sub("[/?\:]()", '', name))
+        names_save.append(re.sub('[/?\:]()"', '', name))
 
     save_folder = os.path.join('pdfs', language, level)
 
     if not os.path.exists(save_folder):
         os.makedirs(save_folder)
 
+    print(f"> Level {level}. Download begins...")
     print("The files will be saved at:", save_folder)
-    print("> Download begins...")
     
     for i, newname in enumerate(tqdm(newnames)):
 
