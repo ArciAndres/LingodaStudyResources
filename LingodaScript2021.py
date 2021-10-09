@@ -10,10 +10,15 @@ parser.add_argument('language', type=str, default="german", help="Language to pr
 parser.add_argument('levels', nargs='+', help='List of levels to process (separated by space)',  
 default=["A1.2", "A2.1", "A2.2", "B1.1", "B2.1","B2.2", "B2.3", "C1.1","C1.2", "C1.3", "C1.4"])
 
-args = parser.parse_args()
+# args = parser.parse_args()
 
-language = args.language
-levels = args.levels
+# language = args.language
+# levels = args.levels
+
+#args = parser.parse_args()
+
+language = "german"
+levels = ["A1.2"]
 
 print(">>> Language:", str.upper(language))
 print(">>> Levels:")
@@ -49,7 +54,8 @@ for level in levels:
         newname = newname.replace("&amp;", "")
         newname = newname.replace("-", " ").replace("   ", " ").replace("  ", " ")
         newname = newname.replace(' ', '-')
-        newname = re.sub("[!¡@#$&?¿':,.()]\"", '', newname)
+        newname = re.sub("[!¡@#$&?¿':,.()]", '', newname)
+        newname = re.sub('"', '', newname)
         newnames.append(newname)
         names_save.append(re.sub("[/?\:]()", '', name))
 
