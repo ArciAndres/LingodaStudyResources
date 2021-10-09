@@ -27,6 +27,11 @@ failed_downloads = []
 for level in levels:
     file = os.path.join("webpages", language, level + ".html")
 
+    if not os.path.exists(file):
+        print("The requested file does not exists:", file)
+        print("Continue with the next level...")
+        continue
+
     with open(file, 'r', encoding='UTF-8') as f:
         html_string = f.read()
 
