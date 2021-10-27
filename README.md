@@ -1,6 +1,6 @@
 # Lingoda study resources
 
-The execution of this script allows the user to download automatically the available material in PDF format from Lingoda language lessons. These PDFs are completely available for each student, but manual downloading could take time. 
+The execution of this script allows the lingoda student to download automatically the available material in PDF format from Lingoda language lessons. These PDFs are completely available for each student, but manual downloading could take time.
 
 ## Instructions
 
