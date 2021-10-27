@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<!-- saved from url=(0012)about:srcdoc -->
+<html class="desktop"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style data-css="sleeknote4">/* base CSS do display sleeknote */
+/* reset */
+[hidden],
+template {
+ display: none;
+}
+
+a {
+ background: transparent;
+ text-decoration: none;
+}
+
+a:active,
+a:hover {
+ outline: 0;
+}
+
+b,
+strong {
+ font-weight: bold;
+}
+
+small {
+ font-size: 80%;
+}
+
+sub,
+sup {
+ font-size: 75%;
+ line-height: 0;
+ position: relative;
+ vertical-align: baseline;
+}
+
+sup {
+ top: -0.5em;
+}
+
+sub {
+ bottom: -0.25em;
+}
+
+img {
+ border: 0;
+ display: inline-block;
+ vertical-align: top;
+ /*vertical-align: text-bottom;*/
+}
+
+img.emoji {
+ height: 1em;
+ width: 1em;
+ margin: 0 0.05em 0 0.1em;
+ vertical-align: -0.1em;
+}
+
+svg:not(:root) {
+ overflow: hidden;
+}
+
+figure {
+ margin: 1em 40px;
+}
+
+hr {
+ /*
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    */
+ height: 0;
+}
+
+pre {
+ overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+ font-family: monospace, monospace;
+ font-size: 1em;
+}
+
+.input,
+button,
+input,
+optgroup,
+select,
+textarea {
+ color: inherit;
+ /* 1 */
+ font: inherit;
+ /* 2 */
+ margin: 0;
+ /* 3 */
+}
+
+button {
+ overflow: visible;
+}
+
+button,
+select {
+ text-transform: none;
+}
+
+button[disabled],
+input[disabled] {
+ cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+ border: 0;
+ padding: 0;
+}
+
+.input,
+input {
+ line-height: 1.2;
+}
+
+table {
+ table-layout: fixed;
+ border-collapse: collapse;
+ border-spacing: 0;
+ position: relative;
+}
+
+td {
+ vertical-align: top;
+}
+
+html,
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+input[type='radio'],
+input[type='checkbox'],
+textarea,
+p,
+blockquote,
+th,
+td,
+label {
+ margin: 0;
+ padding: 0;
+ color: inherit;
+ font-weight: inherit;
+ font-style: inherit;
+ font-size: 100%;
+ /*line-height: 1;*/
+ font-family: inherit;
+ text-align: left;
+}
+
+fieldset,
+img,
+iframe {
+ border: 0;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+th,
+var {
+ font-style: normal;
+ font-weight: normal;
+}
+
+ol,
+ul {
+ list-style: none;
+}
+
+caption,
+th {
+ text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+ font-size: 100%;
+ font-weight: normal;
+}
+
+q:before,
+q:after {
+ content: '';
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+ /*box-sizing: border-box;*/
+ /* 1 */
+ padding: 0;
+ /* 2 */
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+ height: auto;
+}
+
+*,
+*:before,
+*:after {
+ -moz-box-sizing: border-box;
+ -webkit-box-sizing: border-box;
+ box-sizing: border-box;
+ list-style: none;
+ position: relative;
+ overflow: hidden;
+}
+
+/* now the basics */
+html {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 1.5em;
+	-webkit-text-size-adjust: 100%;
+	font-size: 13px;
+	-webkit-tap-highlight-color: transparent;
+	-ms-content-zooming: none;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-feature-settings: 'kern' 1;
+	font-kerning: normal;
+}
+
+.input,
+input[type='text'],
+input[type='email'],
+input[type='date'],
+input[type='tel'],
+textarea {
+	padding: 12px;
+	font-size: 13px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color: #aaa;
+	border: 0px #000 solid;
+	width: 100%;
+}
+
+select,
+.select {
+	font-size: 13px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color: #aaa;
+}
+
+input[type='text']:focus,
+input[type='email']:focus,
+input[type='date']:focus,
+input[type='tel']:focus,
+textarea:focus {
+	outline: none;
+	border-color: solid 1px #ccc;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  height: 1em;
+  padding: 0;
+}
+
+input[type='date']::-webkit-datetime-edit-fields-wrapper {
+  padding: 0;
+}
+
+textarea {
+	overflow: auto;
+	resize: none;
+	display: block;
+}
+
+.textarea,
+textarea {
+ min-height: 100px;
+}
+
+section {
+	cursor: default;
+	/*PP - 6h I never get back - this transform assures that background with pointer-events auto will actually receive them WHY?*/
+	transform: translate(0%, 0%);
+}
+
+.linkbutton,
+[data-sn-type='button'],
+section[data-type='teaser'],
+section[name='teaser'],
+[data-sn-custom-action],
+#sleeknoteMinified {
+	cursor: pointer;
+}
+
+[data-sn-type='phone'] *:not(style) {
+    display: flex;
+    align-items: center;
+}
+
+[data-sn-type='phone']>div {
+	padding: 0!important;
+}
+
+[data-sn-type='phone'] label {
+    display: inline;
+    padding: 4px 16px 4px 8px;
+    overflow: visible;
+    z-index: 1;
+    background: 0 0;
+    background-repeat: no-repeat;
+    background-position: right 0 center;
+}
+
+[data-sn-type='phone'] select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    text-indent: -9999999px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+[data-sn-type='phone'] label:after {
+    content: '+' attr(data-value);
+}
+
+[data-sn-type='phone'] [type='tel'] {
+    flex: auto;
+    padding: 10px;
+    font: inherit;
+    color: inherit;
+    background-color: inherit;
+    background-repeat: inherit;
+    background-position: inherit;
+    background-size: inherit;
+    line-height: 1.2;
+}
+
+[data-sn-type='phone'] select optgroup {
+	color: initial;
+	font-size: initial;
+}
+
+
+body,
+section,
+form {
+	overflow: hidden;
+}
+
+html {
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	overflow-y: auto;
+	height: 100%;
+}
+
+html.editor body,
+html.desktop body {
+	width: calc(100% + 50px);
+}
+
+html.embedded body {
+	overflow: hidden;
+}
+
+
+html.touch * {
+	cursor: pointer !important;
+}
+
+/* section is always wrapper of the box */
+label,
+a,
+input,
+select,
+textarea,
+[data-click],
+section,
+[data-sn-type='text'],
+#video-element {
+	pointer-events: auto !important;
+}
+
+/* remember to apply auto in editor*/
+section > * {
+	pointer-events: none;
+}
+
+.box {
+	overflow: visible;
+	position: absolute;
+	display: block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	top: 0;
+	left: 0;
+	float: none;
+	width: 100%;
+	height: 100%;
+}
+
+.column-bg {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border-radius: 0;
+	z-index: -1;
+}
+
+.element {
+	 position: relative;
+	 width: 100%;
+	 max-width: 100%;
+	 /* now possible to change width */
+	 overflow: visible;
+	 z-index: 2;
+	 height: 100%;
+}
+
+.element > * {
+	width: 100%;
+}
+
+span {
+	word-break: break-word;
+}
+
+.linkbutton p,
+.input p,
+[data-sn-type='button'] p {
+	white-space: nowrap;
+}
+
+.inline-editor p {
+	min-width: 60px;
+}
+
+.inline-editor {
+ /*
+    also educated guess, we should never allow that height sleeknotes anyway, and this just limits one text element size
+    effectively that fixes most resizing problem
+  */
+	max-height: 500px;
+}
+
+.inline-editor * {
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	font-style: inherit;
+	line-height: inherit;
+	text-align: inherit;
+	vertical-align: inherit;
+	white-space: inherit;
+}
+
+.inline-editor strong,
+.inline-editor b {
+	font-weight: bold;
+}
+
+.inline-editor ins {
+	text-decoration: none;
+}
+
+.inline-editor em {
+	font-style: italic;
+}
+
+.inline-editor {
+	line-height: 1.2;
+}
+
+.inline-editor s {
+	text-decoration: line-through;
+}
+
+.inline-editor u {
+	text-decoration: underline;
+}
+
+[data-sn-type='image'] img {
+	max-width: 100%;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+	position: absolute;
+	top: 0;
+	/* not sure seems to better center in the middle*/
+	bottom: 0;
+	margin: auto 0;
+	padding: 0;
+	width: 16px;
+}
+
+[data-sn-subtype='label'] {
+	display: block;
+	position: relative;
+	left: 25px;
+	width: calc(100% - 25px);
+	cursor: pointer;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+[contenteditable='true'] {
+	outline: none !important;
+}
+
+[contenteditable='true']:focus {
+	outline: none !important;
+}
+
+[contenteditable] * {
+	overflow: visible;
+}
+
+html.mobile form {
+	float: none;
+	width: 100%;
+}
+
+[data-sn-custom-step='toggleForm'],
+.element[data-sn-type='close'] {
+	cursor: pointer;
+}
+
+[data-sn-custom-step='toggleForm'] > svg {
+	cursor: pointer;
+	transform: rotate(0deg);
+	transition: 500ms ease all;
+}
+
+.toggle-arrow-down > svg {
+	transform: rotate(0deg) !important;
+}
+
+.toggle-arrow-up > svg {
+	transform: rotate(180deg) !important;
+}
+
+.inline-button {
+	line-height: 0;
+}
+
+.flex-container-container {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-justify-content: flex-start;
+	justify-content: flex-start;
+	width: 100%;
+ 	min-height: 20px;	
+}
+
+.flexbox {
+	display: -webkit-flex;
+	display: flex;
+	outline: none!important;
+}
+
+.select,
+select {
+	height: 100%;
+	color: inherit;
+	font-size: inherit;
+	font-family: inherit;
+	font-weight: inherit;
+	text-align: left !important;
+	border-radius: 0px;
+	border: 0;
+	outline: none;
+	line-height: 1.2;
+	width: 100%;
+	margin: 0;
+	background: transparent;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-image: url("data:image/svg+xml; utf8,<svg width='10' height='5' viewBox='0 0 10 5' xmlns='http://www.w3.org/2000/svg'><title>Triangle</title><path fill='#000' d='M5 5.026L9.19 0H.81' fill-rule='evenodd'/></svg>");
+	background-repeat: no-repeat;
+	background-position: right 1em center;
+}
+.select p,
+select p {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding-right: 20px;
+}
+
+.select-wrap {
+	overflow: hidden;
+}
+
+.select {
+	padding: 10px;
+}
+
+select {
+	cursor: pointer;
+	padding: 10px !important;
+}
+
+option {
+	height: 3em;
+	color: #aaa;
+	background-color: transparent;
+	vertical-align: middle;
+}
+
+select:focus option {
+ color: #444;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+ select {
+  background-position: right calc(20px + 1em) center !important;
+  width: calc(100% + 20px) !important;
+  padding-right: 0 !important;
+ }
+}
+
+#SNForm {
+	-webkit-overflow-scrolling: touch;
+}
+
+[data-sn-subtype='seconds'] {
+	display: none;
+}
+
+[data-sn-custom-seconds='true'] [data-sn-subtype='seconds'],
+[data-sn-custom-seconds='1'] [data-sn-subtype='seconds'] {
+	display: inline;
+}
+
+[data-sn-type='clerk'] {
+	min-height: 100px;
+	background: transparent;
+}
+</style><style data-href="https://fonts.googleapis.com/css?family=Lato:300,400,700">/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/lato/v20/S6u9w4BMUTPHh7USSwaPGR_p.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/lato/v20/S6u9w4BMUTPHh7USSwiPGQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/lato/v20/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/lato/v20/S6u9w4BMUTPHh6UVSwaPGR_p.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/lato/v20/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style></head><body class="vsc-initialized"><section id="sleeknote-form" style="width: auto; margin: 0px; display: block; float: left; padding: 16px 4px 4px 16px;" data-name="form" data-type="form" data-profile="desktop">
+						<form data-type="form" method="GET" action="https://6a4i96w2zg.execute-api.eu-central-1.amazonaws.com/htmlAPI" class="flex-container flex-root" style="width: 600px; margin: auto; overflow: visible;">
+					<input type="hidden" name="{{user_id}}" value="user_id">
+					<ul class="flex-container-container" style="flex-direction: row; align-items: flex-end; align-content: flex-end; width: 100%; overflow: visible; padding: 0px;">
+				<li class="flexbox" style="z-index: 3; top: -15px; left: -15px; width: 30px; height: 30px; overflow: visible; position: absolute; margin: 0px;"><div data-id="Element182" data-element="close-1" data-sn-type="close" class="element" style="width: 100%; height: 100%; border-style: solid; border-color: rgb(0, 0, 0); border-width: 0px; line-height: 0;" data-click="hideBox" data-track-id="Element182"><img draggable="false" unselectable="on" src="blob:https://www.lingoda.com/821bd55a-b063-4b94-9666-f4b414b8e680" class="" style="width: 100%; height: 100%;" data-src="https://sleeknotestaticcontent.sleeknote.com/template-images/123456_close_button.png"></div></li><li class="flexbox" style="overflow: visible; position: absolute; margin: 0px; inset: 0px; z-index: -1;"><div data-id="Element254" data-element="bkg-grid18" data-sn-type="background" class="column-bg" style="border-style: solid; border-color: rgb(0, 0, 0); border-width: 0px; border-radius: 3px; box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 2px; min-height: 20px;"></div></li><li class="flex-container flexbox" style="overflow: hidden; order: 1; flex: 0 1 auto; width: 45.8333%; align-self: stretch; justify-content: center; margin: 0px;"><ul class="flex-container-container" style="flex-direction: row; align-items: center; align-content: center; width: 100%; overflow: visible; padding: 25px 10px 15px 20px;">
+				<li class="flexbox" style="overflow: visible; order: 1; flex: 0 1 auto; width: calc(100% - 10px); align-self: auto; justify-content: center; margin: 0px 10px 10px 0px;"><div data-id="Element137" data-element="image-1" data-sn-type="image" class="element" style="text-align: center;"><img draggable="false" unselectable="on" src="blob:https://www.lingoda.com/93ee1ce4-7cc7-4fff-9916-360ecc4cbc95" class="" style="width: 255px;" data-src="https://sleeknotestaticcontent.sleeknote.com/template-images/placeholder-255x350@2x.jpg"></div></li><li class="flexbox" style="overflow: visible; position: absolute; margin: 0px; inset: 0px; z-index: -1; border-radius: 3px 0px 0px 3px;"><div data-id="Element200" data-element="bkg-1" data-sn-type="background" class="column-bg" style="background-color: rgb(255, 255, 255); background-repeat: no-repeat; background-position: 0px 0px; background-size: 100%; border-radius: 3px 0px 0px 3px;"></div></li>
+				</ul></li><li class="flex-container flexbox" style="overflow: hidden; order: 2; flex: 0 1 auto; width: 54.1667%; align-self: stretch; justify-content: center; margin: 0px;"><ul class="flex-container-container" style="flex-direction: row; align-items: center; align-content: center; width: 100%; overflow: visible; padding: 25px 10px 15px 20px;">
+				<li class="flexbox" style="overflow: visible; order: 1; flex: 0 1 auto; width: calc(100% - 10px); align-self: auto; justify-content: center; margin: 0px 10px 10px 0px;"><div data-id="Element92" data-element="text-1" data-sn-type="text" class="element" style=""><div class=" inline-editor" raw-html="" style="font-size: 12px; text-align: center; color: rgb(68, 68, 68); font-weight: normal;"><p><span style="line-height:30px"><span style="font-size:26px"><strong><span style="font-family:lato,sans-serif">Type your headline here</span></strong></span></span></p></div></div></li><li class="flexbox" style="overflow: visible; order: 2; flex: 0 1 auto; width: calc(100% - 10px); align-self: auto; justify-content: center; margin: 0px 10px 10px 0px;"><div data-id="Element101" data-element="text-2" data-sn-type="text" class="element" style=""><div class=" inline-editor" raw-html="" style="font-size: 12px; text-align: left; color: rgb(68, 68, 68); font-weight: normal;"><p><span style="color:#85939D"><span style="line-height:20px"><span style="font-size:14px"><span style="font-family:lato,sans-serif">Type your paragraph text here.&nbsp;Ut ullamcorper aenean netus nisi morbi blandit egestas pharetra, morbi consectetur ut at diam sollicitudin platea, eros potenti cras integer at etiam pulvinar.</span></span></span></span></p></div></div></li><li class="flexbox" style="overflow: visible; order: 3; flex: 0 1 auto; width: calc(100% - 10px); align-self: auto; justify-content: center; margin: 0px 10px 10px 0px;"><div data-id="Element245" data-element="spacer-1" data-sn-type="spacer" class="element" style=""><div aria-label="false" class=" spacer" raw-html="" style="height: 5px;"></div></div></li><li class="flexbox" style="overflow: visible; order: 7; flex: 0 1 auto; width: calc(100% - 10px); align-self: auto; justify-content: center; margin: 0px 10px 10px 0px;"><div data-id="Element173" data-element="button-1" data-sn-type="button" class="element" style="" data-click="contactSubmitSleeknoteBox" data-track-id="Element173"><div aria-label="false" class=" inline-editor button" raw-html="" style="background-color: rgb(210, 215, 222); background-repeat: no-repeat; background-position: 0px 0px; background-size: 100%; border-style: solid; border-color: rgb(0, 0, 0); border-width: 0px; font-size: 12px; text-align: center; color: rgb(255, 255, 255); font-weight: normal; border-radius: 3px; padding: 10px; font-family: Lato, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;"><p><strong style="font-family: lato, sans-serif; font-size: 14px; line-height: 22px;">Please contact me</strong></p></div></div></li><li class="flexbox" style="overflow: visible; position: absolute; margin: 0px; inset: 0px; z-index: -1; border-radius: 0px 3px 3px 0px;"><div data-id="Element209" data-element="bkg-2" data-sn-type="background" class="column-bg" style="background-color: rgb(255, 255, 255); background-repeat: no-repeat; background-position: 0px 0px; background-size: 100%; border-radius: 0px 3px 3px 0px;"></div></li>
+				</ul></li>
+				</ul>
+				</form>
+					</section></body></html>

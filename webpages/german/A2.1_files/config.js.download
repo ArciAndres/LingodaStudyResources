@@ -1,0 +1,5 @@
+
+window[window["TiktokAnalyticsObject"]].instance("C5G3BSFGE0M3SF4J2S70").setAdvancedMatchingAvailableProperties({"email":false,"phone_number":false});
+window[window["TiktokAnalyticsObject"]].instance("C5G3BSFGE0M3SF4J2S70").setPixelInfo && window[window["TiktokAnalyticsObject"]].instance("C5G3BSFGE0M3SF4J2S70").setPixelInfo({status: 0, name: "TikTok Pixel", advertiserID: "7013757680305078274", setupMode: 1, partner: "", is_onsite: false});
+window[window["TiktokAnalyticsObject"]].setPCMDomain && window[window["TiktokAnalyticsObject"]].setPCMDomain("lingoda.com");
+window[window["TiktokAnalyticsObject"]].setPCMConfig && window[window["TiktokAnalyticsObject"]].setPCMConfig([]);
