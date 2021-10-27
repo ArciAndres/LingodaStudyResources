@@ -11,7 +11,7 @@ For level A1.2, navigate to:
 https://www.lingoda.com/en/account/course-overview/A1.2.
 For the next levels, modify the end of the URL, or just navigate in the webpage. 
 
-Save the website with `Ctrl+s` with Chrome, or other web browser, in the folder `webpages`. It should be saved with the name of the level. For instance, the level A1.2 should have the name `A1.2`.  
+Save the website with `Ctrl+s` with Chrome, or other web browser, in the folder `webpages`. It should be saved with the name of the level inside the corresponding language fodler. For instance, the level A1.2 of German should be saved as `webpages/german/A1.2.html`.  
 This repository includes the HTML files for GERMAN. The other languages are not accessible from my account, and they should be downloaded and included in the respective folder.
 
 ### Dependencies
