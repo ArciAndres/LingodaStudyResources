@@ -15,11 +15,11 @@ Save the website with `Ctrl+s` with Chrome, or other web browser, in the folder 
 This repository includes the HTML files for GERMAN. The other languages are not accessible from my account, and they should be downloaded and included in the respective folder.
 
 ### Dependencies
-You should install Python: https://www.python.org/downloads/
+You should install Python: https://www.python.org/downloads/  
 Any Python 3.6+ version should work just fine. No futher libraries are required. 
 
 ### Execution
-In the command line, run the script, with arguments: language and levels (separated by space). The name of the language shuold be correspondent with the name of the folder. Likewise the name of the levels with the name of the HTML files.
+In the command line, run the script, with arguments: language and levels (separated by space). The name of the language should be correspondent with the name of the folder. Likewise the name of the levels with the name of the HTML files.
 ```
 python LingodaScript2021.py {language} {levels}
 ```
