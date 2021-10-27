@@ -1,6 +1,6 @@
-# Lingoda study resources
+# Lingoda® study resources
 
-The execution of this script allows the lingoda student to download automatically the available material in PDF format from Lingoda language lessons. These PDFs are completely available for each student, but manual downloading could take time.
+The execution of this script allows the Lingoda® student to download automatically the available material in PDF format from Lingoda language lessons. These PDFs are completely available for each student, but manual downloading could take time.
 
 ## Instructions
 
@@ -28,8 +28,13 @@ For example:
 python LingodaScript2021.py german A1.2 A2.1 A2.2 B1.1 B2.1 B2.2 B2.3 C1.1 C1.2 C1.3 C1.4
 ```
 
-The files will be downloaded in the folder `pdfs`, inside the corresponding language folder. 
+The files will be downloaded in the folder `pdfs`, inside the corresponding language folder.  
+Some lessons were created with the same name in other languages, so you are expected to find repeated lessons with the same name in languages different from yours, just with a different prefix. 
+
 
 ### Troubleshooting
 There could be a few exception of files that will not be downloaded due to inconsistancies in their URL with the lesson name. For now, those should be downloaded manually, since automate this task would require to navigate inside the lesson name. Any contribution is highly appreciated. 
+
+### Disclaimer
+All the downloaded material and its content is property of Lingoda®.
 
