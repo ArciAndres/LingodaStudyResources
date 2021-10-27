@@ -20,7 +20,7 @@ A Python 3.6+ version should work just fine. No futher libraries are required.
 ### Execution
 In the command line, run the script, with arguments: language and levels (separated by space). The name of the language shuold be correspondent with the name of the folder. Likewise the name of the levels with the name of the HTML files.
 ```
-python LingodaScript2021.py language levels
+python LingodaScript2021.py {language} {levels}
 ```
 For example:
 ```
