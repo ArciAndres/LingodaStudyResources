@@ -16,7 +16,9 @@ This repository includes the HTML files for GERMAN. The other languages are not 
 
 ### Dependencies
 You should install Python: https://www.python.org/downloads/  
-Any Python 3.6+ version should work just fine. No futher libraries are required. 
+Any Python 3.6+ version should work just fine.  
+Install futher dependencies with:
+`pip install -r requirements.txt`
 
 ### Execution
 In the command line, run the script, with arguments: language and levels (separated by space). The name of the language should be correspondent with the name of the folder. Likewise the name of the levels with the name of the HTML files.
