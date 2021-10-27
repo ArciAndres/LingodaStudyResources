@@ -12,6 +12,10 @@ default=["A1.2", "A2.1", "A2.2", "B1.1", "B2.1","B2.2", "B2.3", "C1.1","C1.2", "
 
 args = parser.parse_args()
 
+## For test purpuses
+# language = "german" 
+# levels = ["A2.2"]
+
 language = args.language
 levels = args.levels
 
@@ -19,7 +23,6 @@ print(">>> Language:", str.upper(language))
 print(">>> Levels:")
 [print(level) for level in levels]
 
-#levels = ["A1.2", "A2.1", "A2.2", "B1.1", "B1.2", "B1.3", "B2.1","B2.2", "B2.3", "C1.1","C1.2", "C1.3", "C1.4"]
 baseURL = "https://www.lingoda.com/german/learning-material/cefr"
 
 failed_downloads = []
@@ -52,7 +55,7 @@ for level in levels:
         newname = re.sub("[!¡@#$&?¿':,.()]", '', newname)
         newname = re.sub('"', '', newname)
         newnames.append(newname)
-        names_save.append(re.sub('[/?\:]()"', '', name))
+        names_save.append(re.sub('[?\/:()"]', '', name))
 
     save_folder = os.path.join('pdfs', language, level)
 
@@ -61,25 +64,30 @@ for level in levels:
 
     print(f"> Level {level}. Download begins...")
     print("The files will be saved at:", save_folder)
+
+    suffixes = ["", "-1", "-2", "-3", "-4"]
     
     for i, newname in enumerate(tqdm(newnames)):
+        for suffix in suffixes:
+            #'https://www.lingoda.com/german/learning-material/cefr/A2.2/that-smells-good/download'
 
-        url = f"{baseURL}/{level}/{newname}/download"
-        response = requests.get(url)
-    
-        # Start of a PDF file
-        # b '%PDF-1.5\r\n%\xb5\xb5\xb5\xb5\r\n1 0 obj\r\n<</'
+            url = f"{baseURL}/{level}/{newname}{suffix}/download"
+            response = requests.get(url)
+        
+            # Start of a PDF file
+            # b '%PDF-1.5\r\n%\xb5\xb5\xb5\xb5\r\n1 0 obj\r\n<</'
 
-        # Start of a non-pdf file, but html "Not found page"
-        # b'<!DOCTYPE html>\n<!--[if IE 9]>\n<html lang...'
+            # Start of a non-pdf file, but html "Not found page"
+            # b'<!DOCTYPE html>\n<!--[if IE 9]>\n<html lang...'
 
-        if not str(response.content[0:10]).startswith("b'%PDF"):
-            #print(f"Failed: {i+1}. {names[i]}")
-            failed_downloads.append((level, i+1, newname, url))
+            if not str(response.content[0:10]).startswith("b'%PDF"):
+                if suffix == "":
+                #print(f"Failed: {i+1}. {names[i]}")
+                    failed_downloads.append((level, i+1, newname, url))
 
-        else: 
-            with open(os.path.join(save_folder, f"{i+1}. ({types[i]}) {names_save[i]}.pdf"), 'wb') as f:
-                f.write(response.content)
+            else: 
+                with open(os.path.join(save_folder, f"{i+1}. ({types[i]}) {names_save[i]}{suffix}.pdf"), 'wb') as f:
+                    f.write(response.content)
 
 print("Failed downloads")
 [print(l,i,n, u) for l,i,n,u in failed_downloads]
